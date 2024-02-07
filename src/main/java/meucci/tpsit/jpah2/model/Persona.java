@@ -11,7 +11,7 @@ public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String nome, cognome;
+    private String name, cognome;
 
     public Persona(){
         
@@ -19,7 +19,7 @@ public class Persona {
 
     public Persona(String nome, String cognome){
 
-        this.nome = nome;
+        this.name = nome;
         this.cognome = cognome;
     }
 
@@ -32,11 +32,11 @@ public class Persona {
     }
 
     public String getNome() {
-        return nome;
+        return name;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.name = nome;
     }
 
     public String getCognome() {

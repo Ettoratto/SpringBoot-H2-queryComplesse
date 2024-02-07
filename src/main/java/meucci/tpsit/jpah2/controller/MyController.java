@@ -16,8 +16,11 @@ public class MyController {
     PersonaRepository personaRepository;
 
     @GetMapping("/list")
-    public List<Persona> list(){
-        return personaRepository.findAll();
+    public List<Persona> list(@RequestParam(name = "name", required = false) String name){
+        if(name != null && name.trim().length() > 0)
+            return personaRepository.findByNameContains(name);
+        else
+            return personaRepository.findAll();
     }
 
     @GetMapping("/{id}")
